@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: kiyange26773/nodejs:v1.0.0
+        image: kiyange26773/nodejs:v1.0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
