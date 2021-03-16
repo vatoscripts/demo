@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-deploy
+  name: nodejs-deploy
   labels:
-    app: example-app
+    app: nodejs-app
   annotations:
 spec:
   selector:
     matchLabels:
-      app: example-app
-  replicas: 5
+      app: nodejs-app
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -18,11 +18,11 @@ spec:
   template:
     metadata:
       labels:
-        app: example-app
+        app: nodejs-app
     spec:
       containers:
-      - name: example-app
-        image: kiyange26773/nodejs:v1.0.1
+      - name: nodejs-app
+        image: kiyange26773/nodejs:v1.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
